@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging.Abstractions;
+using OperacionRescate.Api.Errors;
 using OperacionRescate.Api.Services;
 
 namespace OperacionRescate.Tests;
@@ -41,5 +42,17 @@ public class InventarioServiceTests
         var producto = servicio.ObtenerPorSku("lap-001");
 
         Assert.Equal("LAP-001", producto.Sku);
+    }
+
+    // INC-001
+    [Fact]
+    public void ObtenerPorSku_Inexistente_LanzaRecursoNoEncontrado404()
+    {
+        var servicio = CrearServicio();
+
+        var ex = Assert.Throws<RecursoNoEncontradoException>(() => servicio.ObtenerPorSku("NOEXISTE-999"));
+
+        Assert.Equal(404, ex.StatusCode);
+        Assert.Contains("NOEXISTE-999", ex.Message);
     }
 }

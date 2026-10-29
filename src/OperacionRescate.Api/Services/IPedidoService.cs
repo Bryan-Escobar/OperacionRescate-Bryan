@@ -6,5 +6,5 @@ public interface IPedidoService
 {
     Pedido CrearPedido(CrearPedidoRequest request);
 
-    Pedido? ObtenerPorId(string id);
+    Pedido ObtenerPorId(string id);
 }

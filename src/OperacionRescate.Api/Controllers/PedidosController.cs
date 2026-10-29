@@ -4,6 +4,7 @@ using OperacionRescate.Api.Services;
 
 namespace OperacionRescate.Api.Controllers;
 
+[ApiController]
 [Route("api/[controller]")]
 public class PedidosController : ControllerBase
 {

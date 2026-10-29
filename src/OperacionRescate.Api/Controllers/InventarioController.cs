@@ -3,6 +3,7 @@ using OperacionRescate.Api.Services;
 
 namespace OperacionRescate.Api.Controllers;
 
+[ApiController]
 [Route("api/[controller]")]
 public class InventarioController : ControllerBase
 {

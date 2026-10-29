@@ -1,4 +1,5 @@
 using System.Collections.Concurrent;
+using OperacionRescate.Api.Errors;
 using OperacionRescate.Api.Models;
 
 namespace OperacionRescate.Api.Services;
@@ -17,7 +18,7 @@ public class InventarioService : IInventarioService
         Agregar(new Producto { Sku = "MON-004", Nombre = "Monitor 27 pulgadas", Stock = 150, Precio = 249.50m });
         Agregar(new Producto { Sku = "SSD-005", Nombre = "Disco SSD 1 TB", Stock = 8, Precio = 109.00m });
 
-        logger.LogInformation($"Inventario inicializado con {_productos.Count} productos");
+        logger.LogInformation("Inventario inicializado con {CantidadProductos} productos", _productos.Count);
     }
 
     public IReadOnlyCollection<Producto> ObtenerTodos()
@@ -27,7 +28,8 @@ public class InventarioService : IInventarioService
 
     public Producto ObtenerPorSku(string sku)
     {
-        return _productos[sku];
+        return ObtenerProductoParaPedido(sku)
+            ?? throw new RecursoNoEncontradoException($"No existe un producto con SKU '{sku}'.");
     }
 
     public Producto? ObtenerProductoParaPedido(string sku)
