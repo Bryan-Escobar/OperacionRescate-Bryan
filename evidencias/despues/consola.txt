@@ -1,0 +1,255 @@
+Usando la configuración de inicio de src\OperacionRescate.Api\Properties\launchSettings.json...
+Compilando...
+[17:37:59 INF]  Now listening on: http://localhost:5000
+[17:37:59 INF]  Application started. Press Ctrl+C to shut down.
+[17:37:59 INF]  Hosting environment: Development
+[17:37:59 INF]  Content root path: C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api
+[17:37:59 INF] b1e751f4-ce44-4d01-af16-e71b0dcdb06a Inventario inicializado con 5 productos
+[17:37:59 INF] b1e751f4-ce44-4d01-af16-e71b0dcdb06a HTTP GET /api/inventario finalizó con 200 en 83.9166 ms
+[17:37:59 WRN] 16caf95e-ce11-4cf3-abba-7eb61421cebb HTTP GET /api/inventario/NOEXISTE-999 finalizó con 404 en 44.8346 ms
+[17:38:00 WRN] 519708cd-fdd8-424b-ac81-3b0fe8c5dafd HTTP GET /api/pedidos/no-existe finalizó con 404 en 5.9896 ms
+[17:38:00 WRN] 8a457f9d-1d0c-41f4-a7ab-084da178333b HTTP POST /api/pedidos finalizó con 400 en 27.3271 ms
+[17:38:00 WRN] af597b63-c90d-4219-8ed3-d35283522bf7 HTTP POST /api/pedidos finalizó con 400 en 0.8441 ms
+[17:38:00 INF] f64d0d42-ab9c-408f-af19-7a8b1ae2e2dc HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.8144 ms
+[17:38:00 WRN] cef41557-6fa0-4f4f-a995-3d614ce64991 HTTP POST /api/pedidos finalizó con 400 en 0.5434 ms
+[17:38:00 WRN] bc2055c1-ec90-4d33-8c8c-7353cdc82b83 HTTP POST /api/pedidos finalizó con 400 en 13.1124 ms
+[17:38:00 INF] f88f2fc1-e65f-4472-a429-99531ac92daa Procesando pedido de CLI-001 con primer SKU NOEXISTE-000
+[17:38:00 WRN] f88f2fc1-e65f-4472-a429-99531ac92daa HTTP POST /api/pedidos finalizó con 404 en 1.1536 ms
+[17:38:00 INF] fd5705d9-87cd-4e13-85ba-7a00166d2a7a HTTP GET /api/inventario/SSD-005 finalizó con 200 en 0.3616 ms
+[17:38:00 INF] d84c6f56-9355-4b11-b163-31c2ad535b38 Procesando pedido de CLI-001 con primer SKU SSD-005
+[17:38:00 WRN] d84c6f56-9355-4b11-b163-31c2ad535b38 HTTP POST /api/pedidos finalizó con 409 en 2.0782 ms
+[17:38:00 INF] 26042f45-3d4f-40b0-9216-c5cacbcf2717 Procesando pedido de CLI-001 con primer SKU LAP-001
+[17:38:00 WRN] 26042f45-3d4f-40b0-9216-c5cacbcf2717 HTTP POST /api/pedidos finalizó con 409 en 0.8302 ms
+[17:38:00 INF] bbcdf09f-cdff-4132-822d-8cf158209d2c HTTP GET /api/inventario/SSD-005 finalizó con 200 en 0.244 ms
+[17:38:00 INF] 5e6e8503-2be4-49d0-ac74-79949de1831a HTTP GET /api/inventario/LAP-001 finalizó con 200 en 3.6199 ms
+[17:38:00 INF] dc6dc808-6812-44d0-b5c0-8103f511b380 Procesando pedido de CLI-001 con primer SKU LAP-001
+[17:38:00 INF] dc6dc808-6812-44d0-b5c0-8103f511b380 Precio promedio por unidad del pedido de CLI-001: 899.90
+[17:38:00 INF] dc6dc808-6812-44d0-b5c0-8103f511b380 Pedido 0c6ea3fa-fadc-4759-9d73-b9cd634638dc procesado correctamente
+[17:38:00 INF] dc6dc808-6812-44d0-b5c0-8103f511b380 HTTP POST /api/pedidos finalizó con 201 en 22.7696 ms
+[17:38:00 INF] ed088987-c4c8-4930-94da-f7c93372155f HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3567 ms
+[17:38:00 ERR] ead9038a-2704-43c4-93d2-ff11df89fe27 Excepción no controlada en GET /api/lab/excepcion
+System.InvalidOperationException: Fallo simulado de laboratorio
+   at OperacionRescate.Api.Controllers.LabController.Excepcion() in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Controllers\LabController.cs:line 11
+   at lambda_method10(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+[17:38:01 ERR] ead9038a-2704-43c4-93d2-ff11df89fe27 HTTP GET /api/lab/excepcion finalizó con 500 en 12.5848 ms
+[17:38:01 INF] 8d2c5e2a-3a0e-4e3a-9d7a-0d0b3e3c9f11 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3293 ms
+[17:38:01 INF] 81742563-99a8-4597-9439-325ab49b82f1 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.2373 ms
+[17:38:02 INF] 11111111-2222-3333-4444-555555555555 HTTP GET /api/lab/lento finalizó con 200 en 844.4254 ms
+[17:38:13 INF] 07c52d73-3c6b-4ee7-8c7e-504a50504bf9 HTTP GET /api/inventario finalizó con 200 en 4.7414 ms
+[17:38:14 INF] 856494ea-96d6-48fc-ab15-8a0b290a199e HTTP GET /api/inventario/LAP-001 finalizó con 200 en 1.1521 ms
+[17:38:14 WRN] 5f2a91f8-385f-411a-b873-cd80eeaf3671 HTTP GET /api/inventario/NOEXISTE-999 finalizó con 404 en 0.7115 ms
+[17:38:14 INF] 9e1036f1-6eee-429f-b244-2c6c4ac5a3bd HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3589 ms
+[17:38:14 INF] 6a8a7a4b-4c48-42c4-837c-0c7fe3c62574 Procesando pedido de CLI-001 con primer SKU LAP-001
+[17:38:14 INF] 6a8a7a4b-4c48-42c4-837c-0c7fe3c62574 Precio promedio por unidad del pedido de CLI-001: 899.90
+[17:38:14 INF] 6a8a7a4b-4c48-42c4-837c-0c7fe3c62574 Pedido 228771f9-de36-4630-9a05-c06bc3967a70 procesado correctamente
+[17:38:14 INF] 6a8a7a4b-4c48-42c4-837c-0c7fe3c62574 HTTP POST /api/pedidos finalizó con 201 en 3.7735 ms
+[17:38:14 INF] ba674267-e4b6-4849-98e5-218ad8771910 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3679 ms
+[17:38:14 WRN] 06c31476-e534-4942-8543-f3ee14c121fe HTTP POST /api/pedidos finalizó con 400 en 0.6544 ms
+[17:38:14 INF] 1e2595e2-8e5a-4569-93f1-f5b818a1d19d HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3272 ms
+[17:38:14 WRN] 4fcb642a-c6de-49ca-a18b-4efc48c43b13 HTTP POST /api/pedidos finalizó con 400 en 0.6073 ms
+[17:38:14 INF] 95e97ec5-450b-4663-8428-a1abb6c37199 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3451 ms
+[17:38:14 INF] 84757b8c-bd03-4271-819c-347f7192b8f9 HTTP GET /api/inventario/SSD-005 finalizó con 200 en 0.4313 ms
+[17:38:14 INF] bd34d0ca-ef69-43e5-b2a3-82295a47fc90 Procesando pedido de CLI-001 con primer SKU SSD-005
+[17:38:14 WRN] bd34d0ca-ef69-43e5-b2a3-82295a47fc90 HTTP POST /api/pedidos finalizó con 409 en 1.395 ms
+[17:38:14 INF] 71f32bc4-fecc-448e-ae43-a54ea6d4da06 HTTP GET /api/inventario/SSD-005 finalizó con 200 en 0.4916 ms
+[17:38:14 WRN] a37d4c25-608f-4e7e-a7c5-b6d76d2c32ba HTTP POST /api/pedidos finalizó con 400 en 1.3133 ms
+[17:38:14 WRN] f757f0c0-0add-47fd-9ae6-2f226f9a6aba HTTP POST /api/pedidos finalizó con 400 en 0.9264 ms
+[17:38:14 INF] 85eaf995-501e-441c-a1ee-5829a3cd167b Procesando pedido de CLI-001 con primer SKU NOEXISTE-000
+[17:38:14 WRN] 85eaf995-501e-441c-a1ee-5829a3cd167b HTTP POST /api/pedidos finalizó con 404 en 1.8068 ms
+[17:38:14 ERR] 8bea965e-dbe4-4271-8120-227bfaa86913 Excepción no controlada en GET /api/lab/excepcion
+System.InvalidOperationException: Fallo simulado de laboratorio
+   at OperacionRescate.Api.Controllers.LabController.Excepcion() in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Controllers\LabController.cs:line 11
+   at lambda_method10(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+[17:38:14 ERR] 8bea965e-dbe4-4271-8120-227bfaa86913 HTTP GET /api/lab/excepcion finalizó con 500 en 2.679 ms
+[17:38:14 INF] 3b90ebc6-bf0a-4c86-b605-d2e55c1912df HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.341 ms
+[17:38:14 INF] e4d90cff-9d57-463b-a9d0-592adf3755c2 HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.3796 ms
+[17:38:14 INF] b3e9ad73-c9ce-46f4-a827-252480496b71 HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.3604 ms
+[17:38:14 INF] da3f17e9-1710-46ca-ad31-dbbf00a61b90 HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.3833 ms
+[17:38:14 INF] fb102170-4881-4f8a-952c-84ce2f24d5fe HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.7811 ms
+[17:38:14 INF] da147eef-9e7d-439d-bf3d-e650c164b635 HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.5519 ms
+[17:38:14 INF] 813087cc-748d-4872-ae82-62b5739185c7 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.5267 ms
+[17:38:14 INF] 3a17a506-2b50-485a-8902-c590c56b72a4 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.6429 ms
+[17:38:14 INF] 8670a972-b543-4147-8af2-06bc08573464 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 1.4989 ms
+[17:38:14 INF] 15d3951a-ebae-4dca-8776-9db50d563afc HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.5915 ms
+[17:38:14 INF] eaeb7026-fb3f-4259-a025-eeebc037185b HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.1619 ms
+[17:38:14 INF] 4b59513c-2ecf-432a-8e4a-64e126a23d39 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.4205 ms
+[17:38:14 INF] 3a160edd-231d-4d43-899d-9b0231fba823 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3303 ms
+[17:38:14 INF] 49f96924-767a-4b08-9b0e-a9899aa75c4f HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3542 ms
+[17:38:14 INF] 9e274525-2ef9-445f-b88f-b96133980dbf HTTP GET /api/inventario/LAP-001 finalizó con 200 en 1.215 ms
+[17:38:14 INF] 9cba288a-4e58-4b5c-bcf4-b834695adaab HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.4632 ms
+[17:38:14 INF] ffe26078-2554-4460-a02d-17f75b5c74da HTTP GET /api/lab/lento finalizó con 200 en 153.6108 ms
+[17:38:14 INF] e4ee7b7e-9871-4a6e-a90d-59f5652f3287 HTTP GET /api/lab/lento finalizó con 200 en 150.9006 ms
+[17:38:14 INF] 622eddb5-2c89-429a-a152-291fc97ee185 HTTP GET /api/lab/lento finalizó con 200 en 152.7712 ms
+[17:38:14 INF] 9b2d31e2-88b2-4fba-b4ef-5bef286c307d HTTP GET /api/lab/lento finalizó con 200 en 152.4763 ms
+[17:38:14 INF] 1e1e9fbf-7536-453f-9aba-85fb5a5def3d HTTP GET /api/lab/lento finalizó con 200 en 152.7166 ms
+[17:38:14 INF] a9d1a4f4-6543-4281-8ff8-ff786265dfe7 HTTP GET /api/lab/lento finalizó con 200 en 149.5176 ms
+[17:38:14 INF] ee96ec2e-a413-464e-ac40-e5a2fb80fda8 HTTP GET /api/lab/lento finalizó con 200 en 153.8227 ms
+[17:38:14 INF] 559fc715-5bce-4c0b-bf83-930d385d129f HTTP GET /api/lab/lento finalizó con 200 en 153.0797 ms
+[17:38:14 INF] 03fc2080-cd8d-4035-9981-10d84ef0b67a HTTP GET /api/lab/lento finalizó con 200 en 159.7895 ms
+[17:38:14 INF] 1332d9db-149c-4b43-a338-3c0729160e6f HTTP GET /api/lab/lento finalizó con 200 en 163.5742 ms
+[17:38:14 INF] 1281732a-0562-4aab-98c4-549fe1fdc256 HTTP GET /api/lab/lento finalizó con 200 en 310.2629 ms
+[17:38:15 INF] 32ed3893-eef9-40a8-8967-e3d8cc38f640 HTTP GET /api/lab/lento finalizó con 200 en 816.4815 ms
+[17:38:15 INF] f56edcb1-e58c-47d5-9ccd-d3df739dd18a HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.3678 ms
+[17:38:19 INF] 6dc0b18c-3b13-43fe-ba94-8421d123866b HTTP GET /api/inventario finalizó con 200 en 1.8934 ms
+[17:38:19 INF] cdb544d9-934e-4351-9ead-6ac227cfbdd6 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.4765 ms
+[17:38:19 WRN] 46da72ef-15a1-4d74-9e91-84b4dc83e09e HTTP GET /api/inventario/NOEXISTE-999 finalizó con 404 en 0.7161 ms
+[17:38:19 INF] af370d97-c574-4a84-81b9-4554b76c914a HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.4775 ms
+[17:38:20 INF] 620cb69d-292a-48ca-b609-b9302f09006a Procesando pedido de CLI-001 con primer SKU LAP-001
+[17:38:20 INF] 620cb69d-292a-48ca-b609-b9302f09006a Precio promedio por unidad del pedido de CLI-001: 899.90
+[17:38:20 INF] 620cb69d-292a-48ca-b609-b9302f09006a Pedido 7e495103-4a27-484b-b4d0-67de3abeb4bb procesado correctamente
+[17:38:20 INF] 620cb69d-292a-48ca-b609-b9302f09006a HTTP POST /api/pedidos finalizó con 201 en 1.2804 ms
+[17:38:20 INF] af6e1f27-e5ed-4b99-adb9-9cf459639c6b HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3416 ms
+[17:38:20 WRN] 980dee49-6788-4be6-8315-4ef64f22ef1d HTTP POST /api/pedidos finalizó con 400 en 0.6772 ms
+[17:38:20 INF] 3f84b5bf-a57e-4ebd-b78c-88b2f4044a0d HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.2192 ms
+[17:38:20 WRN] 0d8f5c41-b164-49b7-8ffa-a65c7590fded HTTP POST /api/pedidos finalizó con 400 en 0.5588 ms
+[17:38:20 INF] 67458777-31f0-44ba-b961-25d870c225dd HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.2566 ms
+[17:38:20 INF] c853610d-2b74-4e5b-8def-765add324d96 HTTP GET /api/inventario/SSD-005 finalizó con 200 en 0.344 ms
+[17:38:20 INF] 349c234a-0729-4573-ba28-718c69eca25c Procesando pedido de CLI-001 con primer SKU SSD-005
+[17:38:20 WRN] 349c234a-0729-4573-ba28-718c69eca25c HTTP POST /api/pedidos finalizó con 409 en 1.0135 ms
+[17:38:20 INF] d20cb662-51ce-4d02-8def-2267060910d7 HTTP GET /api/inventario/SSD-005 finalizó con 200 en 0.1958 ms
+[17:38:20 WRN] 8850d642-da91-4b5e-b1cc-a94cf4088782 HTTP POST /api/pedidos finalizó con 400 en 0.9899 ms
+[17:38:20 WRN] c170851f-c68c-4667-8808-19cc8ebff902 HTTP POST /api/pedidos finalizó con 400 en 0.9537 ms
+[17:38:20 INF] 0aa4b90b-8d39-483b-904d-5e53795fae5a Procesando pedido de CLI-001 con primer SKU NOEXISTE-000
+[17:38:20 WRN] 0aa4b90b-8d39-483b-904d-5e53795fae5a HTTP POST /api/pedidos finalizó con 404 en 1.1071 ms
+[17:38:20 ERR] 935ebe25-5768-417b-89b9-aa124bb1ca4f Excepción no controlada en GET /api/lab/excepcion
+System.InvalidOperationException: Fallo simulado de laboratorio
+   at OperacionRescate.Api.Controllers.LabController.Excepcion() in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Controllers\LabController.cs:line 11
+   at lambda_method10(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+[17:38:20 ERR] 935ebe25-5768-417b-89b9-aa124bb1ca4f HTTP GET /api/lab/excepcion finalizó con 500 en 2.3034 ms
+[17:38:20 INF] 9e5a55c1-a922-4f5a-bc0c-d53c9f4c2ceb HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.2893 ms
+[17:38:20 INF] 9e75f53a-5c79-49d9-b8b2-2a75cb23fc6d HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.3868 ms
+[17:38:20 INF] a2136be1-002c-4aad-8280-a76f47d7327c HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.3124 ms
+[17:38:20 INF] b6f359db-9e1d-4e6d-a933-b5e4c1464efe HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.2925 ms
+[17:38:20 INF] 9247e7b8-ad7b-434e-90bf-8a69f0bb8f80 HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.4189 ms
+[17:38:20 INF] 04d74c3c-304a-43ed-8527-c533737ce99f HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.2131 ms
+[17:38:20 INF] 6c696766-5e76-4106-a22c-eb6f2f08d295 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.5227 ms
+[17:38:20 INF] ec645967-5929-4e54-9d40-6a8064c96b65 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3017 ms
+[17:38:20 INF] 801f5297-e641-430c-b71b-768945e61523 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3318 ms
+[17:38:20 INF] 2315bd98-1bba-4e95-a2c6-f0ccee535745 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3613 ms
+[17:38:20 INF] b34d8317-936b-4fed-9877-95cf0805318c HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3661 ms
+[17:38:20 INF] 99d9e665-82c5-44d6-8829-d97136453cd2 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.5518 ms
+[17:38:20 INF] 15a0f07e-2d6d-430e-a212-2a137345de34 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.3699 ms
+[17:38:20 INF] 2a6b0b99-5486-4f47-ac8e-3074b97235a7 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.2893 ms
+[17:38:20 INF] 4ea97fee-4f27-4ba2-9d0a-57dc95060260 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.8326 ms
+[17:38:20 INF] 7f91fa53-2a1e-49df-abc3-fd68faaa6b1d HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.328 ms
+[17:38:20 INF] c2092441-f06e-4ed0-bfc7-722884ba72cb HTTP GET /api/lab/lento finalizó con 200 en 149.4395 ms
+[17:38:20 INF] 19d995de-b1f3-45e7-b9d1-addf0a1113c5 HTTP GET /api/lab/lento finalizó con 200 en 157.9242 ms
+[17:38:20 INF] fecbe414-a285-4735-8753-dd4cae7bcbc3 HTTP GET /api/lab/lento finalizó con 200 en 164.8148 ms
+[17:38:20 INF] f29aabea-55ed-499f-8a46-8f006ff4a846 HTTP GET /api/lab/lento finalizó con 200 en 160.9726 ms
+[17:38:20 INF] a16dba86-4acf-46be-ba21-d2a0aa899f70 HTTP GET /api/lab/lento finalizó con 200 en 163.3123 ms
+[17:38:20 INF] b843642e-5418-4a39-9d5c-43a424e8edf2 HTTP GET /api/lab/lento finalizó con 200 en 157.9053 ms
+[17:38:20 INF] 371a3a1b-9584-44ca-a55b-375d7d1e18eb HTTP GET /api/lab/lento finalizó con 200 en 163.3265 ms
+[17:38:20 INF] bf1291d6-dab7-418a-8c3f-94c496e661f2 HTTP GET /api/lab/lento finalizó con 200 en 156.2287 ms
+[17:38:20 INF] b19e97c2-cc29-4623-b947-879e4c5c3cbb HTTP GET /api/lab/lento finalizó con 200 en 158.39 ms
+[17:38:20 INF] daa3a1b1-f2b7-4ca2-b7e8-151222669fa7 HTTP GET /api/lab/lento finalizó con 200 en 161.6639 ms
+[17:38:20 INF] 533c1db8-e464-40af-8a81-5cf0d07c1c16 HTTP GET /api/lab/lento finalizó con 200 en 302.3879 ms
+[17:38:21 INF] 4865ef5a-39d3-477b-a564-5e6d3351acf9 HTTP GET /api/lab/lento finalizó con 200 en 804.7597 ms
+[17:38:21 INF] 29d2b535-860d-4867-9259-b2dc8a623f91 HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.2271 ms
+[17:38:25 INF] fe18079c-764e-4de0-b32a-56c3c1e009dc HTTP GET /api/inventario finalizó con 200 en 0.6295 ms
+[17:38:25 INF] 16a5e5f2-fee5-49fb-b1db-3e780addd75e HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.238 ms
+[17:38:25 WRN] 84338380-c6df-4d71-ba4b-fdf370fd5cc6 HTTP GET /api/inventario/NOEXISTE-999 finalizó con 404 en 0.3635 ms
+[17:38:25 INF] 0a366c55-b6c2-40cd-a746-f0f01934fe8e HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.1848 ms
+[17:38:25 INF] 70ef639d-0361-4009-af69-179a8d7da1d4 Procesando pedido de CLI-001 con primer SKU LAP-001
+[17:38:25 INF] 70ef639d-0361-4009-af69-179a8d7da1d4 Precio promedio por unidad del pedido de CLI-001: 899.90
+[17:38:25 INF] 70ef639d-0361-4009-af69-179a8d7da1d4 Pedido d9c4d688-2e98-48c2-9688-2846b222c330 procesado correctamente
+[17:38:25 INF] 70ef639d-0361-4009-af69-179a8d7da1d4 HTTP POST /api/pedidos finalizó con 201 en 0.9252 ms
+[17:38:25 INF] 4c835640-8030-4e58-8a47-57a4135cfee7 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.1687 ms
+[17:38:25 WRN] 68fa6f6c-cee0-4739-9fbd-ab3043ae3c47 HTTP POST /api/pedidos finalizó con 400 en 0.3981 ms
+[17:38:25 INF] e64d9977-0476-4dfc-ac7d-93fc2901cdd7 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.2176 ms
+[17:38:25 WRN] b095084d-4c8c-4a0b-b382-cac8a8845214 HTTP POST /api/pedidos finalizó con 400 en 0.5658 ms
+[17:38:25 INF] 948a6d9c-6940-4113-98b1-2c88a0407f6e HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.148 ms
+[17:38:25 INF] 5c284303-194f-4def-8d49-ed0bdce16306 HTTP GET /api/inventario/SSD-005 finalizó con 200 en 0.1358 ms
+[17:38:25 INF] c0e54a56-7483-4844-92ee-ce7a41e5ca65 Procesando pedido de CLI-001 con primer SKU SSD-005
+[17:38:25 WRN] c0e54a56-7483-4844-92ee-ce7a41e5ca65 HTTP POST /api/pedidos finalizó con 409 en 0.7764 ms
+[17:38:25 INF] b3f77d1f-689f-4e31-910d-2a78db73cc44 HTTP GET /api/inventario/SSD-005 finalizó con 200 en 0.2484 ms
+[17:38:25 WRN] 738960be-16e2-4101-a283-205126c77bee HTTP POST /api/pedidos finalizó con 400 en 0.7861 ms
+[17:38:25 WRN] 81ae2d2b-b935-4ff4-a254-eade97cc1ef8 HTTP POST /api/pedidos finalizó con 400 en 1.0285 ms
+[17:38:25 INF] afece6ab-fdc1-4225-9a62-2ebdd9e04b84 Procesando pedido de CLI-001 con primer SKU NOEXISTE-000
+[17:38:25 WRN] afece6ab-fdc1-4225-9a62-2ebdd9e04b84 HTTP POST /api/pedidos finalizó con 404 en 0.6625 ms
+[17:38:25 ERR] 2bc03574-c2f5-4add-8ceb-9406efc98489 Excepción no controlada en GET /api/lab/excepcion
+System.InvalidOperationException: Fallo simulado de laboratorio
+   at OperacionRescate.Api.Controllers.LabController.Excepcion() in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Controllers\LabController.cs:line 11
+   at lambda_method10(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+[17:38:25 ERR] 2bc03574-c2f5-4add-8ceb-9406efc98489 HTTP GET /api/lab/excepcion finalizó con 500 en 1.4721 ms
+[17:38:25 INF] fd8daf25-94cd-4f68-8d46-90902b53ddfc HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.1095 ms
+[17:38:25 INF] 725c0b04-00c4-4670-88ca-9d55b247cdde HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.173 ms
+[17:38:25 INF] a0eb93b3-a234-4368-bf9f-b74d90c34280 HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.1809 ms
+[17:38:25 INF] b79d3a2a-954c-488a-bae5-d6fb73a0a5db HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.1588 ms
+[17:38:25 INF] 969ceaae-6eb6-42e0-9924-e6347fde3185 HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.1442 ms
+[17:38:25 INF] b685d1c4-35d8-4685-b6b1-b3b09675b6bc HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.1661 ms
+[17:38:25 INF] 84da25ce-da71-40b6-b9bc-5ef3810a071e HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.2408 ms
+[17:38:25 INF] 54cd23d7-2293-48e8-86b0-c1c9baa5b4ea HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.251 ms
+[17:38:25 INF] b2bdfcc8-509b-481d-af8c-f883f418394a HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.2024 ms
+[17:38:25 INF] e704aa3b-da54-49e3-9451-f864a75fcb65 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.1546 ms
+[17:38:25 INF] d633f4b4-2ac6-49d5-a7c2-4d1a45bb7926 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.2578 ms
+[17:38:25 INF] 95cff125-5c0b-4b03-a655-9e730180be12 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.1877 ms
+[17:38:25 INF] 0882aa7f-2324-42a6-97df-d001fece98c3 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.1749 ms
+[17:38:25 INF] c73da3be-d422-4b33-b308-ac784775ee13 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.1002 ms
+[17:38:25 INF] 13e3658f-f2ee-44c5-a375-8a5938990272 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.2001 ms
+[17:38:25 INF] e1ec7c22-9905-4a83-a18b-3941dcdec1b5 HTTP GET /api/inventario/LAP-001 finalizó con 200 en 0.2545 ms
+[17:38:25 INF] bd4d1433-e47e-483a-965f-8439e551f97a HTTP GET /api/lab/lento finalizó con 200 en 153.3041 ms
+[17:38:25 INF] b4ace9dd-a8db-4765-82ff-3bdd42445cf7 HTTP GET /api/lab/lento finalizó con 200 en 154.3983 ms
+[17:38:25 INF] 10572fd7-9b00-4610-9f92-0d6c88cc8f5a HTTP GET /api/lab/lento finalizó con 200 en 160.0815 ms
+[17:38:25 INF] 3654271f-cfbe-4e45-b04b-4106af472c5d HTTP GET /api/lab/lento finalizó con 200 en 160.9717 ms
+[17:38:25 INF] bbe959da-c7fb-4c3f-9afe-e5c21d938b55 HTTP GET /api/lab/lento finalizó con 200 en 162.4907 ms
+[17:38:25 INF] 234c1235-cf5e-4d39-9b21-4c0809c3a2b3 HTTP GET /api/lab/lento finalizó con 200 en 157.421 ms
+[17:38:25 INF] 91e547b6-1825-42a1-94cb-a1d2f4cfff4b HTTP GET /api/lab/lento finalizó con 200 en 158.8574 ms
+[17:38:25 INF] e4787c83-9c3c-49d0-9792-b955b6f22413 HTTP GET /api/lab/lento finalizó con 200 en 162.6414 ms
+[17:38:25 INF] 23de96ff-08be-46aa-9b98-9b682d07b0ae HTTP GET /api/lab/lento finalizó con 200 en 155.0774 ms
+[17:38:25 INF] 967c892c-825b-4aa4-a855-072720b199a2 HTTP GET /api/lab/lento finalizó con 200 en 161.0707 ms
+[17:38:26 INF] 268a9242-196f-4ddf-9c6c-ada3ede5648e HTTP GET /api/lab/lento finalizó con 200 en 303.5765 ms
+[17:38:27 INF] dee9ed65-b831-4ee7-8e53-235a31237f2b HTTP GET /api/lab/lento finalizó con 200 en 803.5433 ms
+[17:38:27 INF] 65fb7c8a-92cc-4eab-89b5-8c05577b099b HTTP GET /api/inventario/MOU-002 finalizó con 200 en 0.1744 ms

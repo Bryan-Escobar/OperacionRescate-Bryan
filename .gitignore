@@ -5,3 +5,7 @@ logs/
 *.user
 reporte-validacion.json
 TestResults/
+
+# Entregables: copia de los logs y reporte de la corrida final del validador
+!evidencias/logs/
+!evidencias/reporte-validacion.json

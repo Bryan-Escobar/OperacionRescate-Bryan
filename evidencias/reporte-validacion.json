@@ -1,0 +1,164 @@
+{
+  "labRunId": "run-eb1910505888",
+  "baseUrl": "http://localhost:5000",
+  "fecha": "2026-10-29T23:38:29.4913515Z",
+  "puntos": 100.0,
+  "maximo": 100.0,
+  "nota": 10.0,
+  "pruebas": [
+    {
+      "id": "T01",
+      "nombre": "Consultar inventario existente (200)",
+      "puntos": 5,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "T02",
+      "nombre": "Consultar inventario inexistente (404 seguro y consistente)",
+      "puntos": 5,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "T03",
+      "nombre": "Crear pedido válido (201 y descuento de stock)",
+      "puntos": 6,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "T04",
+      "nombre": "Pedido con cantidad cero (400)",
+      "puntos": 5,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "T05",
+      "nombre": "Pedido con cantidad negativa (400, sin alterar stock)",
+      "puntos": 3,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "T06",
+      "nombre": "Pedido superior al inventario (409, sin alterar stock)",
+      "puntos": 6,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "T07",
+      "nombre": "JSON malformado o pedido sin items (400)",
+      "puntos": 5,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "T08",
+      "nombre": "Pedido con SKU inexistente (404)",
+      "puntos": 3,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "T09",
+      "nombre": "Excepción de laboratorio (500 seguro, sin detalles técnicos)",
+      "puntos": 6,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "C01",
+      "nombre": "Acepta y devuelve un X-Correlation-ID válido",
+      "puntos": 4,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "C02",
+      "nombre": "Reemplaza identificadores malformados por un GUID nuevo",
+      "puntos": 4,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "C03",
+      "nombre": "Genera un identificador cuando no llega ninguno",
+      "puntos": 3,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "C04",
+      "nombre": "Peticiones simultáneas conservan su propio identificador",
+      "puntos": 4,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "L01",
+      "nombre": "Existen archivos de log con contenido",
+      "puntos": 3,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "L02",
+      "nombre": "Formato JSON Lines (un JSON válido por línea)",
+      "puntos": 3,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "L03",
+      "nombre": "Propiedades obligatorias en el evento de finalización",
+      "puntos": 5,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "L04",
+      "nombre": "Cada petición ejecutada tiene exactamente un evento de finalización correcto",
+      "puntos": 8,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "L05",
+      "nombre": "ElapsedMs refleja el tiempo real de procesamiento",
+      "puntos": 5,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "L06",
+      "nombre": "LabRunId propagado a todos los eventos de cada petición",
+      "puntos": 4,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "L07",
+      "nombre": "Excepción registrada una sola vez; errores de negocio no son 'Error'",
+      "puntos": 6,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "L08",
+      "nombre": "Los logs no contienen datos sensibles",
+      "puntos": 4,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "L09",
+      "nombre": "Niveles de log acordes al resultado (Information/Warning/Error)",
+      "puntos": 3,
+      "aprobado": true,
+      "detalle": ""
+    }
+  ]
+}

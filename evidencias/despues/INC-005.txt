@@ -1,0 +1,20 @@
+### curl -i http://localhost:5000/api/inventario/LAP-001 -H X-Correlation-ID: 8d2c5e2a-3a0e-4e3a-9d7a-0d0b3e3c9f11
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:38:00 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+X-Correlation-ID: 8d2c5e2a-3a0e-4e3a-9d7a-0d0b3e3c9f11
+
+{"sku":"LAP-001","nombre":"Laptop Pro 14","stock":498,"precio":899.90}
+
+### curl -i http://localhost:5000/api/inventario/LAP-001 -H X-Correlation-ID: abc-8d2c5e2a-3a0e-4e3a-9d7a-0d0b3e3c9f11-zzz
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:38:00 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+X-Correlation-ID: 81742563-99a8-4597-9439-325ab49b82f1
+
+{"sku":"LAP-001","nombre":"Laptop Pro 14","stock":498,"precio":899.90}
+

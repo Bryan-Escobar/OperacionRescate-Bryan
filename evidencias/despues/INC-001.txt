@@ -1,0 +1,26 @@
+### curl -i http://localhost:5000/api/inventario/NOEXISTE-999
+HTTP/1.1 404 Not Found
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:37:59 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: 16caf95e-ce11-4cf3-abba-7eb61421cebb
+
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.5","title":"Recurso no encontrado","status":404,"detail":"No existe un producto con SKU 'NOEXISTE-999'.","correlationId":"16caf95e-ce11-4cf3-abba-7eb61421cebb"}
+
+### curl -i http://localhost:5000/api/pedidos/no-existe
+HTTP/1.1 404 Not Found
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:37:59 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: 519708cd-fdd8-424b-ac81-3b0fe8c5dafd
+
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.5","title":"Recurso no encontrado","status":404,"detail":"No existe un pedido con id 'no-existe'.","correlationId":"519708cd-fdd8-424b-ac81-3b0fe8c5dafd"}
+

@@ -1,0 +1,72 @@
+### curl -i -X POST http://localhost:5000/api/pedidos -H Content-Type: application/json --data-binary @../antes/peticiones/cero.json
+HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:37:59 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: 8a457f9d-1d0c-41f4-a7ab-084da178333b
+
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"Solicitud inválida","status":400,"detail":"La cantidad del SKU 'LAP-001' debe ser un entero mayor que cero.","correlationId":"8a457f9d-1d0c-41f4-a7ab-084da178333b"}
+
+### curl -i -X POST http://localhost:5000/api/pedidos -H Content-Type: application/json --data-binary @../antes/peticiones/negativo.json
+HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:37:59 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: af597b63-c90d-4219-8ed3-d35283522bf7
+
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"Solicitud inválida","status":400,"detail":"La cantidad del SKU 'LAP-001' debe ser un entero mayor que cero.","correlationId":"af597b63-c90d-4219-8ed3-d35283522bf7"}
+
+### curl -i http://localhost:5000/api/inventario/LAP-001
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:37:59 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+X-Correlation-ID: f64d0d42-ab9c-408f-af19-7a8b1ae2e2dc
+
+{"sku":"LAP-001","nombre":"Laptop Pro 14","stock":500,"precio":899.90}
+
+### curl -i -X POST http://localhost:5000/api/pedidos -H Content-Type: application/json --data-binary @../antes/peticiones/vacio.json
+HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:37:59 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: cef41557-6fa0-4f4f-a995-3d614ce64991
+
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"Solicitud inválida","status":400,"detail":"El pedido debe contener al menos un ítem.","correlationId":"cef41557-6fa0-4f4f-a995-3d614ce64991"}
+
+### curl -i -X POST http://localhost:5000/api/pedidos -H Content-Type: application/json --data-binary @../antes/peticiones/malformado.json
+HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:37:59 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+X-Correlation-ID: bc2055c1-ec90-4d33-8c8c-7353cdc82b83
+
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"Solicitud inválida","status":400,"detail":"El cuerpo de la solicitud no es un JSON válido o contiene valores con tipo incorrecto (la cantidad debe ser un entero).","correlationId":"bc2055c1-ec90-4d33-8c8c-7353cdc82b83"}
+
+### curl -i -X POST http://localhost:5000/api/pedidos -H Content-Type: application/json --data-binary @../antes/peticiones/sku-inexistente.json
+HTTP/1.1 404 Not Found
+Content-Type: application/problem+json
+Date: Thu, 29 Oct 2026 23:37:59 GMT
+Server: Kestrel
+Cache-Control: no-cache,no-store
+Expires: -1
+Pragma: no-cache
+Transfer-Encoding: chunked
+X-Correlation-ID: f88f2fc1-e65f-4472-a429-99531ac92daa
+
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.5","title":"Recurso no encontrado","status":404,"detail":"No existe un producto con SKU 'NOEXISTE-000'.","correlationId":"f88f2fc1-e65f-4472-a429-99531ac92daa"}
+

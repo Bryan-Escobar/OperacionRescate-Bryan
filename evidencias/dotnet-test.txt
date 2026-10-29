@@ -1,0 +1,7 @@
+  Determinando los proyectos que se van a restaurar...
+  Todos los proyectos están actualizados para la restauración.
+  OperacionRescate.Api -> C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\bin\Debug\net10.0\OperacionRescate.Api.dll
+  OperacionRescate.Tests -> C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\tests\OperacionRescate.Tests\bin\Debug\net10.0\OperacionRescate.Tests.dll
+Serie de pruebas para C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\tests\OperacionRescate.Tests\bin\Debug\net10.0\OperacionRescate.Tests.dll (.NETCoreApp,Version=v10.0)
+1 archivos de prueba en total coincidieron con el patrón especificado.
+Correctas! - Con error:     0, Superado:    40, Omitido:     0, Total:    40, Duración: 3 s - OperacionRescate.Tests.dll (net10.0)

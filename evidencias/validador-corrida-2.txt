@@ -1,0 +1,43 @@
+============================================================
+ Validador - Operación Rescate
+ API:      http://localhost:5000
+ Logs:     ./logs
+ LabRunId: run-8a9983eac38c
+============================================================
+
+1) Comportamiento de la API
+  [ OK ] T01  Consultar inventario existente (200) (5 pts)
+  [ OK ] T02  Consultar inventario inexistente (404 seguro y consistente) (5 pts)
+  [ OK ] T03  Crear pedido válido (201 y descuento de stock) (6 pts)
+  [ OK ] T04  Pedido con cantidad cero (400) (5 pts)
+  [ OK ] T05  Pedido con cantidad negativa (400, sin alterar stock) (3 pts)
+  [ OK ] T06  Pedido superior al inventario (409, sin alterar stock) (6 pts)
+  [ OK ] T07  JSON malformado o pedido sin items (400) (5 pts)
+  [ OK ] T08  Pedido con SKU inexistente (404) (3 pts)
+  [ OK ] T09  Excepción de laboratorio (500 seguro, sin detalles técnicos) (6 pts)
+
+2) Identificador de correlación
+  [ OK ] C01  Acepta y devuelve un X-Correlation-ID válido (4 pts)
+  [ OK ] C02  Reemplaza identificadores malformados por un GUID nuevo (4 pts)
+  [ OK ] C03  Genera un identificador cuando no llega ninguno (3 pts)
+  [ OK ] C04  Peticiones simultáneas conservan su propio identificador (4 pts)
+
+3) Logs estructurados
+  [ OK ] L01  Existen archivos de log con contenido (3 pts)
+  [ OK ] L02  Formato JSON Lines (un JSON válido por línea) (3 pts)
+  [ OK ] L03  Propiedades obligatorias en el evento de finalización (5 pts)
+  [ OK ] L04  Cada petición ejecutada tiene exactamente un evento de finalización correcto (8 pts)
+  [ OK ] L05  ElapsedMs refleja el tiempo real de procesamiento (5 pts)
+  [ OK ] L06  LabRunId propagado a todos los eventos de cada petición (4 pts)
+  [ OK ] L07  Excepción registrada una sola vez; errores de negocio no son 'Error' (6 pts)
+  [ OK ] L08  Los logs no contienen datos sensibles (4 pts)
+  [ OK ] L09  Niveles de log acordes al resultado (Information/Warning/Error) (3 pts)
+
+============================================================
+ Puntos:        100 / 100
+ Cumplimiento:  100.0 %
+ NOTA ORIENTATIVA: 10.00 / 10
+============================================================
+ La nota del validador es orientativa. La calificación final
+ incluye revisión de código, pruebas, informe y defensa técnica.
+ Reporte JSON: ./evidencias/reporte-validacion.json
