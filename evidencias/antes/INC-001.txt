@@ -1,0 +1,43 @@
+### $ http://localhost:5000/api/inventario/NOEXISTE-999
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+Date: Thu, 29 Oct 2026 23:16:24 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+System.Collections.Generic.KeyNotFoundException: The given key 'NOEXISTE-999' was not present in the dictionary.
+   at System.Collections.Concurrent.ConcurrentDictionary`2.ThrowKeyNotFoundException(TKey key)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
+   at OperacionRescate.Api.Services.InventarioService.ObtenerPorSku(String sku) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Services\InventarioService.cs:line 30
+   at OperacionRescate.Api.Controllers.InventarioController.Obtener(String sku) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Controllers\InventarioController.cs:line 25
+   at lambda_method3(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at OperacionRescate.Api.Middleware.LegacyErrorMiddleware.InvokeAsync(HttpContext context) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Middleware\LegacyErrorMiddleware.cs:line 18
+
+### $ http://localhost:5000/api/pedidos/no-existe
+HTTP/1.1 204 No Content
+Date: Thu, 29 Oct 2026 23:16:24 GMT
+Server: Kestrel
+
+
+
+### $ http://localhost:5000/api/inventario/SSD-005
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:16:25 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{"sku":"SSD-005","nombre":"Disco SSD 1 TB","stock":8,"precio":109.00}
+

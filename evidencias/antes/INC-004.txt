@@ -1,0 +1,24 @@
+### $ http://localhost:5000/api/lab/excepcion
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+Date: Thu, 29 Oct 2026 23:16:26 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+System.InvalidOperationException: Fallo simulado de laboratorio
+   at OperacionRescate.Api.Controllers.LabController.Excepcion() in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Controllers\LabController.cs:line 11
+   at lambda_method10(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at OperacionRescate.Api.Middleware.LegacyErrorMiddleware.InvokeAsync(HttpContext context) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Middleware\LegacyErrorMiddleware.cs:line 18
+

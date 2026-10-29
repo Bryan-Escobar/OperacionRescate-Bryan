@@ -1,0 +1,132 @@
+### $ -X POST http://localhost:5000/api/pedidos -H Content-Type: application/json --data-binary @peticiones/cero.json
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+Date: Thu, 29 Oct 2026 23:16:25 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+System.DivideByZeroException: Attempted to divide by zero.
+   at System.Decimal.DecCalc.VarDecDiv(DecCalc& d1, DecCalc& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at OperacionRescate.Api.Services.PedidoService.CrearPedido(CrearPedidoRequest request) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Services\PedidoService.cs:line 37
+   at OperacionRescate.Api.Controllers.PedidosController.Crear(CrearPedidoRequest request) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Controllers\PedidosController.cs:line 20
+   at lambda_method7(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at OperacionRescate.Api.Middleware.LegacyErrorMiddleware.InvokeAsync(HttpContext context) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Middleware\LegacyErrorMiddleware.cs:line 18
+
+### $ http://localhost:5000/api/inventario/LAP-001
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:16:25 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{"sku":"LAP-001","nombre":"Laptop Pro 14","stock":500,"precio":899.90}
+
+### $ -X POST http://localhost:5000/api/pedidos -H Content-Type: application/json --data-binary @peticiones/negativo.json
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:16:25 GMT
+Server: Kestrel
+Location: http://localhost:5000/api/Pedidos/b8e5e468-f099-4eda-834e-7a5b5c531f95
+Transfer-Encoding: chunked
+
+{"id":"b8e5e468-f099-4eda-834e-7a5b5c531f95","clienteId":"CLI-001","estado":"Confirmado","total":-4499.50,"items":[{"sku":"LAP-001","cantidad":-5,"precioUnitario":899.90}]}
+
+### $ http://localhost:5000/api/inventario/LAP-001
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Thu, 29 Oct 2026 23:16:25 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{"sku":"LAP-001","nombre":"Laptop Pro 14","stock":505,"precio":899.90}
+
+### $ -X POST http://localhost:5000/api/pedidos -H Content-Type: application/json --data-binary @peticiones/vacio.json
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+Date: Thu, 29 Oct 2026 23:16:25 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at OperacionRescate.Api.Services.PedidoService.CrearPedido(CrearPedidoRequest request) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Services\PedidoService.cs:line 24
+   at OperacionRescate.Api.Controllers.PedidosController.Crear(CrearPedidoRequest request) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Controllers\PedidosController.cs:line 20
+   at lambda_method7(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at OperacionRescate.Api.Middleware.LegacyErrorMiddleware.InvokeAsync(HttpContext context) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Middleware\LegacyErrorMiddleware.cs:line 18
+
+### $ -X POST http://localhost:5000/api/pedidos -H Content-Type: application/json --data-binary @peticiones/malformado.json
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+Date: Thu, 29 Oct 2026 23:16:25 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at OperacionRescate.Api.Services.PedidoService.CrearPedido(CrearPedidoRequest request) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Services\PedidoService.cs:line 23
+   at OperacionRescate.Api.Controllers.PedidosController.Crear(CrearPedidoRequest request) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Controllers\PedidosController.cs:line 20
+   at lambda_method7(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at OperacionRescate.Api.Middleware.LegacyErrorMiddleware.InvokeAsync(HttpContext context) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Middleware\LegacyErrorMiddleware.cs:line 18
+
+### $ -X POST http://localhost:5000/api/pedidos -H Content-Type: application/json --data-binary @peticiones/sku-inexistente.json
+HTTP/1.1 500 Internal Server Error
+Content-Type: text/plain
+Date: Thu, 29 Oct 2026 23:16:26 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at OperacionRescate.Api.Services.PedidoService.CrearPedido(CrearPedidoRequest request) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Services\PedidoService.cs:line 33
+   at OperacionRescate.Api.Controllers.PedidosController.Crear(CrearPedidoRequest request) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Controllers\PedidosController.cs:line 20
+   at lambda_method7(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at OperacionRescate.Api.Middleware.LegacyErrorMiddleware.InvokeAsync(HttpContext context) in C:\Users\steve\OneDrive - UNIVERSIDAD CATOLICA DE EL SALVADOR\Documentos\MATERIAL26\CICLO II\DMAW\OperacionRescate\src\OperacionRescate.Api\Middleware\LegacyErrorMiddleware.cs:line 18
+

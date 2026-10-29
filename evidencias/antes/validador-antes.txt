@@ -1,0 +1,63 @@
+============================================================
+ Validador - Operación Rescate
+ API:      http://localhost:5000
+ Logs:     ./logs
+ LabRunId: run-e5a495cdb060
+============================================================
+
+1) Comportamiento de la API
+  [ OK ] T01  Consultar inventario existente (200) (5 pts)
+  [FAIL] T02  Consultar inventario inexistente (404 seguro y consistente) (0/5 pts)
+         -> estado 500 (esperado 404)
+  [ OK ] T03  Crear pedido válido (201 y descuento de stock) (6 pts)
+  [FAIL] T04  Pedido con cantidad cero (400) (0/5 pts)
+         -> estado 500 (esperado 400)
+  [FAIL] T05  Pedido con cantidad negativa (400, sin alterar stock) (0/3 pts)
+         -> estado 201 (esperado 400); una cantidad negativa modificó el stock (507 -> 512)
+  [FAIL] T06  Pedido superior al inventario (409, sin alterar stock) (0/6 pts)
+         -> estado 500 (esperado 409)
+  [FAIL] T07  JSON malformado o pedido sin items (400) (0/5 pts)
+         -> JSON malformado: estado 500 (esperado 400); items vacío: estado 500 (esperado 400)
+  [FAIL] T08  Pedido con SKU inexistente (404) (0/3 pts)
+         -> estado 500 (esperado 404)
+  [FAIL] T09  Excepción de laboratorio (500 seguro, sin detalles técnicos) (0/6 pts)
+         -> Content-Type 'text/plain' no es JSON (se espera application/problem+json)
+
+2) Identificador de correlación
+  [FAIL] C01  Acepta y devuelve un X-Correlation-ID válido (0/4 pts)
+         -> se envió ae0c2598-8f05-4f9b-93c5-e49bcba5ebca y la respuesta devolvió ''
+  [FAIL] C02  Reemplaza identificadores malformados por un GUID nuevo (0/4 pts)
+         -> para 'abc-04954b65-5f5e-4614-945e-6198fec419bc' no se generó un GUID válido (respuesta: ''); para 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' no se generó un GUID válido (respuesta: ''); para 'no es un guid; DROP TABLE' no se generó un GUID válido (respuesta: '')
+  [FAIL] C03  Genera un identificador cuando no llega ninguno (0/3 pts)
+         -> sin cabecera entrante no se generó un GUID válido (''); segunda petición sin identificador no devolvió un GUID válido (''); dos peticiones distintas recibieron el mismo identificador
+  [FAIL] C04  Peticiones simultáneas conservan su propio identificador (0/4 pts)
+         -> 20 de 20 peticiones simultáneas no conservaron su propio identificador o no devolvieron 200
+
+3) Logs estructurados
+  [FAIL] L01  Existen archivos de log con contenido (0/3 pts)
+         -> no existen archivos dentro de './logs'; los archivos de log están vacíos
+  [FAIL] L02  Formato JSON Lines (un JSON válido por línea) (0/3 pts)
+         -> no hay líneas que validar
+  [FAIL] L03  Propiedades obligatorias en el evento de finalización (0/5 pts)
+         -> no se encontró ningún evento de finalización (evento con ElapsedMs) de las peticiones ejecutadas
+  [FAIL] L04  Cada petición ejecutada tiene exactamente un evento de finalización correcto (0/8 pts)
+         -> 46 petición(es) sin un único evento correcto. [GET /api/inventario 200] la respuesta no trae X-Correlation-ID; [GET /api/inventario/LAP-001 200] la respuesta no trae X-Correlation-ID; [GET /api/inventario/NOEXISTE-999 500] la respuesta no trae X-Correlation-ID; [GET /api/inventario/LAP-001 200] la respuesta no trae X-Correlation-ID; [POST /api/pedidos 201] la respuesta no trae X-Correlation-ID; [GET /api/inventario/LAP-001 200] la respuesta no trae X-Correlation-ID; [POST /api/pedidos 500] la respuesta no trae X-Correlation-ID; [GET /api/inventario/LAP-001 200] la respuesta no trae X-Correlation-ID; [POST /api/pedidos 201] la respuesta no
+  [FAIL] L05  ElapsedMs refleja el tiempo real de procesamiento (0/5 pts)
+         -> faltan los eventos de las peticiones de medición de tiempo
+  [FAIL] L06  LabRunId propagado a todos los eventos de cada petición (0/4 pts)
+         -> no hay eventos asociados a las peticiones ejecutadas
+  [FAIL] L07  Excepción registrada una sola vez; errores de negocio no son 'Error' (0/6 pts)
+         -> la excepción de laboratorio no devolvió X-Correlation-ID
+  [FAIL] L08  Los logs no contienen datos sensibles (0/4 pts)
+         -> no hay logs que revisar
+  [FAIL] L09  Niveles de log acordes al resultado (Information/Warning/Error) (0/3 pts)
+         -> sin eventos de finalización que evaluar
+
+============================================================
+ Puntos:        11 / 100
+ Cumplimiento:  11.0 %
+ NOTA ORIENTATIVA: 1.10 / 10
+============================================================
+ La nota del validador es orientativa. La calificación final
+ incluye revisión de código, pruebas, informe y defensa técnica.
+ Reporte JSON: ./evidencias/antes/reporte-validacion-antes.json

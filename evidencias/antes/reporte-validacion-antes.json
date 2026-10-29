@@ -1,0 +1,164 @@
+{
+  "labRunId": "run-e5a495cdb060",
+  "baseUrl": "http://localhost:5000",
+  "fecha": "2026-10-29T23:27:53.1700608Z",
+  "puntos": 11.0,
+  "maximo": 100.0,
+  "nota": 1.1,
+  "pruebas": [
+    {
+      "id": "T01",
+      "nombre": "Consultar inventario existente (200)",
+      "puntos": 5,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "T02",
+      "nombre": "Consultar inventario inexistente (404 seguro y consistente)",
+      "puntos": 5,
+      "aprobado": false,
+      "detalle": "estado 500 (esperado 404)"
+    },
+    {
+      "id": "T03",
+      "nombre": "Crear pedido válido (201 y descuento de stock)",
+      "puntos": 6,
+      "aprobado": true,
+      "detalle": ""
+    },
+    {
+      "id": "T04",
+      "nombre": "Pedido con cantidad cero (400)",
+      "puntos": 5,
+      "aprobado": false,
+      "detalle": "estado 500 (esperado 400)"
+    },
+    {
+      "id": "T05",
+      "nombre": "Pedido con cantidad negativa (400, sin alterar stock)",
+      "puntos": 3,
+      "aprobado": false,
+      "detalle": "estado 201 (esperado 400); una cantidad negativa modificó el stock (507 -> 512)"
+    },
+    {
+      "id": "T06",
+      "nombre": "Pedido superior al inventario (409, sin alterar stock)",
+      "puntos": 6,
+      "aprobado": false,
+      "detalle": "estado 500 (esperado 409)"
+    },
+    {
+      "id": "T07",
+      "nombre": "JSON malformado o pedido sin items (400)",
+      "puntos": 5,
+      "aprobado": false,
+      "detalle": "JSON malformado: estado 500 (esperado 400); items vacío: estado 500 (esperado 400)"
+    },
+    {
+      "id": "T08",
+      "nombre": "Pedido con SKU inexistente (404)",
+      "puntos": 3,
+      "aprobado": false,
+      "detalle": "estado 500 (esperado 404)"
+    },
+    {
+      "id": "T09",
+      "nombre": "Excepción de laboratorio (500 seguro, sin detalles técnicos)",
+      "puntos": 6,
+      "aprobado": false,
+      "detalle": "Content-Type 'text/plain' no es JSON (se espera application/problem+json)"
+    },
+    {
+      "id": "C01",
+      "nombre": "Acepta y devuelve un X-Correlation-ID válido",
+      "puntos": 4,
+      "aprobado": false,
+      "detalle": "se envió ae0c2598-8f05-4f9b-93c5-e49bcba5ebca y la respuesta devolvió ''"
+    },
+    {
+      "id": "C02",
+      "nombre": "Reemplaza identificadores malformados por un GUID nuevo",
+      "puntos": 4,
+      "aprobado": false,
+      "detalle": "para 'abc-04954b65-5f5e-4614-945e-6198fec419bc' no se generó un GUID válido (respuesta: ''); para 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' no se generó un GUID válido (respuesta: ''); para 'no es un guid; DROP TABLE' no se generó un GUID válido (respuesta: '')"
+    },
+    {
+      "id": "C03",
+      "nombre": "Genera un identificador cuando no llega ninguno",
+      "puntos": 3,
+      "aprobado": false,
+      "detalle": "sin cabecera entrante no se generó un GUID válido (''); segunda petición sin identificador no devolvió un GUID válido (''); dos peticiones distintas recibieron el mismo identificador"
+    },
+    {
+      "id": "C04",
+      "nombre": "Peticiones simultáneas conservan su propio identificador",
+      "puntos": 4,
+      "aprobado": false,
+      "detalle": "20 de 20 peticiones simultáneas no conservaron su propio identificador o no devolvieron 200"
+    },
+    {
+      "id": "L01",
+      "nombre": "Existen archivos de log con contenido",
+      "puntos": 3,
+      "aprobado": false,
+      "detalle": "no existen archivos dentro de './logs'; los archivos de log están vacíos"
+    },
+    {
+      "id": "L02",
+      "nombre": "Formato JSON Lines (un JSON válido por línea)",
+      "puntos": 3,
+      "aprobado": false,
+      "detalle": "no hay líneas que validar"
+    },
+    {
+      "id": "L03",
+      "nombre": "Propiedades obligatorias en el evento de finalización",
+      "puntos": 5,
+      "aprobado": false,
+      "detalle": "no se encontró ningún evento de finalización (evento con ElapsedMs) de las peticiones ejecutadas"
+    },
+    {
+      "id": "L04",
+      "nombre": "Cada petición ejecutada tiene exactamente un evento de finalización correcto",
+      "puntos": 8,
+      "aprobado": false,
+      "detalle": "46 petición(es) sin un único evento correcto. [GET /api/inventario 200] la respuesta no trae X-Correlation-ID; [GET /api/inventario/LAP-001 200] la respuesta no trae X-Correlation-ID; [GET /api/inventario/NOEXISTE-999 500] la respuesta no trae X-Correlation-ID; [GET /api/inventario/LAP-001 200] la respuesta no trae X-Correlation-ID; [POST /api/pedidos 201] la respuesta no trae X-Correlation-ID; [GET /api/inventario/LAP-001 200] la respuesta no trae X-Correlation-ID; [POST /api/pedidos 500] la respuesta no trae X-Correlation-ID; [GET /api/inventario/LAP-001 200] la respuesta no trae X-Correlation-ID; [POST /api/pedidos 201] la respuesta no"
+    },
+    {
+      "id": "L05",
+      "nombre": "ElapsedMs refleja el tiempo real de procesamiento",
+      "puntos": 5,
+      "aprobado": false,
+      "detalle": "faltan los eventos de las peticiones de medición de tiempo"
+    },
+    {
+      "id": "L06",
+      "nombre": "LabRunId propagado a todos los eventos de cada petición",
+      "puntos": 4,
+      "aprobado": false,
+      "detalle": "no hay eventos asociados a las peticiones ejecutadas"
+    },
+    {
+      "id": "L07",
+      "nombre": "Excepción registrada una sola vez; errores de negocio no son 'Error'",
+      "puntos": 6,
+      "aprobado": false,
+      "detalle": "la excepción de laboratorio no devolvió X-Correlation-ID"
+    },
+    {
+      "id": "L08",
+      "nombre": "Los logs no contienen datos sensibles",
+      "puntos": 4,
+      "aprobado": false,
+      "detalle": "no hay logs que revisar"
+    },
+    {
+      "id": "L09",
+      "nombre": "Niveles de log acordes al resultado (Information/Warning/Error)",
+      "puntos": 3,
+      "aprobado": false,
+      "detalle": "sin eventos de finalización que evaluar"
+    }
+  ]
+}
