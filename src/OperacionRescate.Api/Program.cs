@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using OperacionRescate.Api.Errors;
+using OperacionRescate.Api.Middleware;
 using OperacionRescate.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,26 +30,32 @@ builder.Services.AddControllers()
         };
     });
 
-// Todas las respuestas de error usan problem+json.
+// Todas las respuestas de error usan problem+json con el correlationId de la petición.
 builder.Services.AddProblemDetails(options =>
 {
     options.CustomizeProblemDetails = context =>
     {
         context.ProblemDetails.Extensions.Remove("traceId");
+        context.ProblemDetails.Extensions["correlationId"] = context.HttpContext.GetCorrelationId();
     };
 });
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.Configure<ExceptionHandlerOptions>(options =>
 {
-    // El manejador global decide la respuesta; el framework registra la excepción.
-    options.SuppressDiagnosticsCallback = _ => false;
+    // RequestDiagnosticMiddleware registra la excepción; se evita que el
+    // framework la registre una segunda vez.
+    options.SuppressDiagnosticsCallback = _ => true;
 });
 
+builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddSingleton<IInventarioService, InventarioService>();
 builder.Services.AddSingleton<IPedidoService, PedidoService>();
 
 var app = builder.Build();
 
+// Orden: el middleware de diagnóstico va primero para envolver al manejador de
+// excepciones y así registrar el código de estado final de cada petición.
+app.UseMiddleware<RequestDiagnosticMiddleware>();
 app.UseExceptionHandler();
 app.UseStatusCodePages();
 
