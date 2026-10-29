@@ -4,8 +4,15 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using OperacionRescate.Api.Errors;
 using OperacionRescate.Api.Middleware;
 using OperacionRescate.Api.Services;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Serilog reemplaza al logging por defecto. Niveles, enriquecedores y sinks
+// (consola + archivo JSON Lines con rotación diaria) se leen de appsettings.json.
+builder.Services.AddSerilog((services, configuration) => configuration
+    .ReadFrom.Configuration(builder.Configuration)
+    .ReadFrom.Services(services));
 
 builder.Services.AddControllers()
     .ConfigureApiBehaviorOptions(options =>
